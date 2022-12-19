@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from .models import Note
+from .serializers import NoteSerializer
 # Create your views here.
 @api_view(['GET'])
 def getRoutes(request):
@@ -39,3 +41,12 @@ def getRoutes(request):
     ]
 
     return Response(routes)
+
+#get all notes
+@api_view(['GET'])
+def getNotes(request):
+    #Pass the model Note and get all its values
+    notes = Note.objects.all()
+    # many allows us tto pass a queryset of many notes value as well as give the output in JSON format
+    serializer = NoteSerializer(notes, many=True)
+    return Response(serializer.data)
