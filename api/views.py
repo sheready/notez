@@ -47,6 +47,16 @@ def getRoutes(request):
 def getNotes(request):
     #Pass the model Note and get all its values
     notes = Note.objects.all()
-    # many allows us tto pass a queryset of many notes value as well as give the output in JSON format
+    # many allows us to pass a queryset of many notes value as well as give the output in JSON format
     serializer = NoteSerializer(notes, many=True)
+    return Response(serializer.data)
+
+#get a single note using an id
+@api_view(['GET'])
+#pass the primary key of the note
+def getNote(request, pk):
+    #Pass the model Note and filter using the id
+    notes = Note.objects.get(id=pk)
+    # many is false so as to serialize only one object as well as give the output in JSON format
+    serializer = NoteSerializer(notes, many=False)
     return Response(serializer.data)
