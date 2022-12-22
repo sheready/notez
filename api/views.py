@@ -60,3 +60,15 @@ def getNote(request, pk):
     # many is false so as to serialize only one object as well as give the output in JSON format
     serializer = NoteSerializer(notes, many=False)
     return Response(serializer.data)
+
+@api_view(['PUT'])
+def updateNote(request, pk):
+    data = request.data
+    note = Note.objects.get(id=pk)
+    #get the instance of the note and the data from the api
+    serializer = NoteSerializer(instance=note, data=data)
+    #save the new data
+    if serializer.is_valid():
+        serializer.save()
+
+    return Response(serializer.data)
