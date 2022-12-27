@@ -46,7 +46,7 @@ def getRoutes(request):
 @api_view(['GET'])
 def getNotes(request):
     #Pass the model Note and get all its values
-    notes = Note.objects.all()
+    notes = Note.objects.all().order_by('-updated_at')
     # many allows us to pass a queryset of many notes value as well as give the output in JSON format
     serializer = NoteSerializer(notes, many=True)
     return Response(serializer.data)
@@ -72,3 +72,9 @@ def updateNote(request, pk):
         serializer.save()
 
     return Response(serializer.data)
+
+@api_view(['DELETE'])
+def deleteNote(request, pk):
+    note = Note.objects.get(id=pk)
+    note.delete()
+    return Response('Note was deleted')
