@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Note
 from .serializers import NoteSerializer
+from notes.api import serializers
 # Create your views here.
 @api_view(['GET'])
 def getRoutes(request):
@@ -59,6 +60,15 @@ def getNote(request, pk):
     notes = Note.objects.get(id=pk)
     # many is false so as to serialize only one object as well as give the output in JSON format
     serializer = NoteSerializer(notes, many=False)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def createNote(request):
+    data = request.data
+    note = Note.objects.create(
+        body = data['body']
+    )
+    serializer = NoteSerializer(note, many=False)
     return Response(serializer.data)
 
 @api_view(['PUT'])
