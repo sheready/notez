@@ -57,10 +57,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'notes.urls'
 
+# point django to the react build files
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'frontend-notez/build'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,6 +127,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#link frontend static files
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'frontend-notez/build/static'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
