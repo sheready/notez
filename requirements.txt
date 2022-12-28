@@ -132,6 +132,7 @@ ruamel.yaml.clib==0.2.6
 SecretStorage==3.3.1
 semantic-version==2.8.5
 simplejson==3.17.2
+apturl==0.5.2
 sqlparse==0.4.2
 stripe==2.76.0
 systemd-python==234
