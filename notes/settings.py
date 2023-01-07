@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
     'rest_framework',
-     'corsheaders',
+    'corsheaders',
 ]
 
 
@@ -71,7 +71,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR / 'frontend-notez/build'),
+            BASE_DIR / 'frontend-notez/build/public'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
