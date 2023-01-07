@@ -24,6 +24,8 @@ environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+REAL_BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -70,9 +72,7 @@ ROOT_URLCONF = 'notes.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / '../../notes/frontend/frontend/build'
-        ],
+        'DIRS': [os.path.join(REAL_BASE_DIR, 'frontend', 'build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -140,9 +140,7 @@ STATIC_URL = '/static/'
 
 #link frontend static files
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'frontend/frontend/build/static'
-]
+STATICFILES_DIRS = [os.path.join(REAL_BASE_DIR, 'frontend', 'build', 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
