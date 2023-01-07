@@ -32,7 +32,7 @@ SECRET_KEY= 'n%jf(kg=+rl31=*=i9rs(_7q)kkjmg=8$h79rh45eir4of=l8+'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
