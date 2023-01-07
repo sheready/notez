@@ -71,7 +71,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / '../notes/frontend/frontend/build'
+            BASE_DIR / '../../notes/frontend/frontend/build'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
