@@ -71,7 +71,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'frontend-notez/build/public'
+            BASE_DIR / 'frontend-notez-app/build'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -141,7 +141,7 @@ STATIC_URL = '/static/'
 #link frontend static files
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'frontend-notez/build/static'
+    BASE_DIR / 'frontend-notez-app/build/static'
 ]
 
 # Default primary key field type
