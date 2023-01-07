@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import environ
 from pathlib import Path
+import dj_database_url
 
 # Initialise environment variables
 env = environ.Env()
@@ -88,16 +89,13 @@ WSGI_APPLICATION = 'notes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+DATABASE_URL = env('DATABASE_URL')
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASS'),
-        'HOST': 'localhost',
-        'PORT':'',
-    }
+    'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
 }
+
 
 
 # Password validation
