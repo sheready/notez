@@ -11,7 +11,6 @@ botocore==1.23.54
 cached-property==1.5.2
 cachetools==5.0.0
 cement==2.8.2
-certifi==2020.6.20
 command-not-found==0.3
 commonmark==0.9.1
 coreapi==2.3.3
