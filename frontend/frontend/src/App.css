@@ -1,0 +1,79 @@
+#itemcard{
+  align-items: center;
+  height: 200px;
+  width: 30%;
+  margin-left: 35%;
+}
+.itemcard{
+  align-items: center;
+  height: 200px;
+  width: 90%;
+  margin-left: 5%;
+  border-color: #F07900;
+}
+.itemicon{
+  margin-left: 5%;
+  font-size: 170%
+}
+#items{
+  margin-top: 30px;
+  border: #F07900 1px solid;
+  padding: 3px;
+  width: fit-content;
+  align-items: center;
+  margin-left: 35%;
+  height: fit-content;
+ 
+}
+
+*{
+
+  color: #F07900;
+}
+
+#header{
+  height: 2%;
+}
+#main-topic{
+  display: inline;
+  font-size: 40px;
+}
+
+#icon{
+  height: 50px;
+  width: 50px;
+  margin-left: 35%;
+  margin-top: 10px;
+}
+.notes-list{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  height: fit-content;
+
+
+}
+
+#deleteButton{
+  margin-left: 150px;
+  height: 30px;
+}
+#note-body{
+  margin-left: 5%;
+}
+
+#Addbutton{
+  margin-left: 35%;
+  margin-top: 10px;
+}
+#card-note{
+  height: fit-content;
+  width: 100%;
+}
+
+#card-div{
+  margin: 5px;
+
+
+}
