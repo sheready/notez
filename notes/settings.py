@@ -71,7 +71,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'frontend-notez/build'
+            os.path.join(BASE_DIR / 'frontend-notez/build'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
